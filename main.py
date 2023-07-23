@@ -5,8 +5,8 @@ class Operand:
         return int(self.nUmber)
 
 class Operator:
-    def __init__(self, raw_operator):
-        self.oPerator = raw_operator
+    def __init__(self, raw_opr):
+        self.oPerator = raw_opr
     def method_2(self):
         return self.oPerator
 
@@ -21,18 +21,18 @@ class Operation:
         return operand1 / operand2
 
 # input operand like 8, eight, "one" etc.
-num1 = input(f'enter a number: ') # be input'ed by user
+num1 = input(f'enter a number: ') # be input by user
 operand1 = Operand(num1)
 #print(type(operand1.method_1()))
 #print(type(operand1))
 
 # input operand like 8, eight, "one" etc.
-num2 = input("enter one more number: ") # be input'ed by user
+num2 = input("enter one more number: ") # be input by user
 operand2 = Operand(num2)
 #print (operand2.method_1())
 
 # operator like * x : / + -, divide, add , multiply etc.
-symbol = input('enter operator: ') #be input'ed by user
+symbol = input('enter operator: ') #be input by user
 operator = Operator(symbol)
 #print (operator.method_2())
 
