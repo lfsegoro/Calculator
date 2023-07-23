@@ -21,18 +21,18 @@ class Operation:
         return operand1 / operand2
 
 # input operand like 8, eight, "one" etc.
-num1 = input() # be input'ed by user
+num1 = input(f'enter a number: ') # be input'ed by user
 operand1 = Operand(num1)
 #print(type(operand1.method_1()))
 #print(type(operand1))
 
 # input operand like 8, eight, "one" etc.
-num2 = 9 # be input'ed by user
+num2 = input("enter one more number: ") # be input'ed by user
 operand2 = Operand(num2)
 #print (operand2.method_1())
 
 # operator like * x : / + -, divide, add , multiply etc.
-symbol = "plus" #be input'ed by user
+symbol = input('enter operator: ') #be input'ed by user
 operator = Operator(symbol)
 #print (operator.method_2())
 
