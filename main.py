@@ -16,7 +16,8 @@ class Operation:
         self.addition = Operand(num1).method_1() + Operand(num2).method_1()
         self.substraction = Operand(num1).method_1() - Operand(num2).method_1()
         self.multiplication = Operand(num1).method_1() * Operand(num2).method_1()
-        self.division = Operand(num1).method_1() / Operand(num2).method_1()
+        if Operand(num2).method_1() != 0:
+            self.division = Operand(num1).method_1() / Operand(num2).method_1()
     def manipulation(self):
        if (Operator(symbol).method_2()) in ["+","plus","add"]:
            return self.addition
@@ -51,7 +52,7 @@ num2 = input("enter one more number: ") # be input by user
 #print (operand2.method_1())
 
 # operator like * x : / + -, divide, add , multiply etc.
-symbol = input('enter operator: ') #be input by user
+symbol = input('enter operator, I accept all these ["+","plus","add"]["-","minus","substract"]["*","x","times"]["/",":","divide"]: ') #be input by user
 #print (operator.method_2())
 """
 print(Operator(symbol))
