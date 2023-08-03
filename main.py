@@ -1,5 +1,7 @@
+
 #initialize global variables
 num=[5,7]
+delvar='delele'
 class Operand:
     def __init__(self, raw_num):
         self.nUmber = float(raw_num)
