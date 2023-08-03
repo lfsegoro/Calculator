@@ -1,5 +1,5 @@
 #initialize global variables
-num=[1,2]
+num=[5,7]
 class Operand:
     def __init__(self, raw_num):
         self.nUmber = float(raw_num)
@@ -34,11 +34,14 @@ class Result:
        print (self.show)
 
 def invoke_console():
+    global num1
+    global num2
+    global symbol
 #Uncomment below if you want to use/activate console base calculator
 # input operand like 8, eight, "one" etc.
-    num[0] = input(f'enter a number: ') # be input by user
+    num[0] = float(input(f'enter a number: ')) # be input by user
 # input operand like 8, eight, "one" etc.
-    num[1] = input("enter one more number: ") # be input by user
+    num[1] = float(input("enter one more number: ")) # be input by user
 # operator like * x : / + -, divide, add , multiply etc.
     symbol = input('enter operator, I accept all these ["+","plus","add"]\n["-","minus","substract"]\n["*","x","times"]\n["/",":","divide"]: ') #be input by user
 # Result :
@@ -46,7 +49,7 @@ def invoke_console():
 
 #======Above are console calculator, Below are GUI that also use above classes.
 from tkinter import *
-from tkinter import ttk
+#from tkinter import ttk
 root = Tk()
 root.geometry('400x300')
 root.title('Train Multiply for Children')
@@ -77,13 +80,15 @@ class Button_widget:
         # 2 lines below: a variable that only need a ride:)
         global symbol
         symbol = Operator(y).method_2()
-        self.button = ttk.Button(root, text=x, width=8)
+        self.button = Button(root, text=x, width=8)
         self.button.grid(column=column, row=row)
         if i == 6:
-            self.button.bind("<Button-1>", invoke_console())
+            self.button.bind("<Button-1>", lambda eve: invoke_console())
             return
-        self.button.bind("<ButtonRelease-1>", lambda event:self.buttonclick(i))
-    def buttonclick(self,i):
+        self.button.bind("<ButtonRelease-1>", lambda event:self.buttonclick(i,y))
+    def buttonclick(self,i,y):
+        global symbol
+        symbol = Operator(y).method_2()
         match i:
             case 1:
                 num[0]=num[0]+1
