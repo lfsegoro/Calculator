@@ -37,7 +37,6 @@ def invoke_console():
     global num1
     global num2
     global symbol
-#Uncomment below if you want to use/activate console base calculator
 # input operand like 8, eight, "one" etc.
     num[0] = float(input(f'enter a number: ')) # be input by user
 # input operand like 8, eight, "one" etc.
